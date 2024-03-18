@@ -16,5 +16,14 @@ COPY . .
 # Expose port 3000 (or the port your application listens on)
 EXPOSE 3000
 
+# Create a non-root user
+RUN groupadd -r myapp && useradd -r -g myapp myapp
+
+# Set the ownership of the application directory to the non-root user
+RUN chown -R myapp:myapp /usr/src/app
+
+# Switch to the non-root user
+USER myapp
+
 # Command to run your Node.js application
 CMD ["node", "server.js"]
