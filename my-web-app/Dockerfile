@@ -16,8 +16,8 @@ COPY . .
 # Expose port 3000 (or the port your application listens on)
 EXPOSE 3000
 
-# Create a non-root user
-RUN groupadd -r myapp && useradd -r -g myapp myapp
+# Create a non-root user with a UID between 10000 and 20000
+RUN groupadd -r myapp && useradd -r -g myapp -u 10001 myapp
 
 # Set the ownership of the application directory to the non-root user
 RUN chown -R myapp:myapp /usr/src/app
