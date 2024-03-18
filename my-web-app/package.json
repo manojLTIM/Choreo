@@ -2,6 +2,9 @@
   "name": "my-web-app",
   "version": "1.0.0",
   "description": "Node.js web application for adding two numbers",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
