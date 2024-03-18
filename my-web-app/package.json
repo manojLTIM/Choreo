@@ -1,0 +1,8 @@
+{
+  "name": "my-web-app",
+  "version": "1.0.0",
+  "description": "Node.js web application for adding two numbers",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
