@@ -17,13 +17,13 @@ COPY . .
 EXPOSE 3000
 
 # Create a non-root user with a UID between 10000 and 20000
-RUN groupadd -r myapp && useradd -r -g myapp -u 10003 myapp
+RUN groupadd -r myapp && useradd -r -g myapp -u 10001 myapp
 
 # Set the ownership of the application directory to the non-root user
 RUN chown -R myapp:myapp /usr/src/app
 
-# Switch to the non-root user
-USER myapp
+# Switch to the non-root user with a specified UID
+USER 10001
 
 # Command to run your Node.js application
 CMD ["node", "server.js"]
