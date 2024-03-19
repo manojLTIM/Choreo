@@ -7,6 +7,10 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json files
 COPY package*.json ./
 
+RUN apt-get update
+
+CMD ["echo", "Hello World"]
+
 # Install dependencies
 RUN npm install
 
